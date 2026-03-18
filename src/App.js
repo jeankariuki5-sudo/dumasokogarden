@@ -6,6 +6,7 @@ import Signin from './components/Signin';
 import Signup from './components/Signup';
 import NotFound from './components/NotFound';
 import 'bootstrap/dist/css/bootstrap.min.css'
+import Makepayment from './components/Makepayment';
 
 
 function App() {
@@ -16,17 +17,20 @@ function App() {
           <h1>Welcome to Soko Garden</h1>
         </header>
 
-      <Link to={'/'} className='nav-links'>Get Products Page</Link>
-      <Link to={'/Addproducts'} className='nav-links'>Add Products Page</Link>
-      <Link to={'/Signin'} className='nav-links'>Sign In Page</Link>
-      <Link to={'/Signup'} className='nav-links'>Sign Up Page</Link>
+        <nav>
 
+          <Link to="/" className='btn btn-primary btn-sm m-1'> Home</Link>
+          <Link to="/Addproducts" className='btn btn-success btn-sm m-1' >Add products</Link>
+          <Link to="/Signin" className='btn btn-danger btn-sm m-1' >Signin</Link>
+          <Link to="/Signup" className='btn btn-info btn-sm m-1' >Signup</Link>
+        </nav>
         {/* Below are our different routes together with our rendered components */}
         <Routes>
           <Route path='/' element={<Getproducts />} />
           <Route path='/Addproducts' element={<Addproducts />} />
           <Route path='/Signin' element={<Signin />} />
           <Route path='/Signup' element={<Signup />} />
+          <Route path='/makepayment' element={<Makepayment />} />
           <Route path='*' element={<NotFound />} />
         </Routes>
       </div>
